@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOP | SOYMEK</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+TC:wght@900&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        (function() {
+            const saved = localStorage.getItem('theme');
+            const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+            const theme = saved || (prefersDark ? 'dark' : 'light');
+            document.documentElement.setAttribute('data-theme', theme);
+        })();
+    </script>
+</head>
+<body class="page-shop">
+    <div id="site-nav"></div>
+
+    <div class="app-wrapper">
+        <section class="shop-section">
+            <h2 class="section-title">SUBSCRIBE ｜ <ruby>訂閱<rt>Dìngyuè</rt></ruby></h2>
+            
+            <div class="shop-funnel">
+                <!-- Progress Bar -->
+                <div class="funnel-progress">
+                    <div class="progress-step active" data-step="1">VARIANT</div>
+                    <div class="progress-step" data-step="2">RITME</div>
+                    <div class="progress-step" data-step="3">HOEVEELHEID</div>
+                </div>
+
+                <!-- Step 1: Variant -->
+                <div class="shop-step active" id="step-1">
+                    <h3 class="step-heading">KIES JE VARIANT</h3>
+                    <div class="product-grid">
+                        <div class="product-card" data-variant="standard">
+                            <div class="product-image-placeholder">標準</div>
+                            <h4 class="product-name">STANDARD ｜ <ruby>標準<rt>Biāozhǔn</rt></ruby></h4>
+                            <p class="product-desc">Zijdezacht, perfect voor dagelijks gebruik. 7.5x ratio.</p>
+                            <button class="select-btn">SELECTEER</button>
+                        </div>
+                        <div class="product-card" data-variant="extra-thick">
+                            <div class="product-image-placeholder">特濃</div>
+                            <h4 class="product-name">EXTRA THICK ｜ <ruby>特濃<rt>Tè nóng</rt></ruby></h4>
+                            <p class="product-desc">Extreem romig en vol van smaak. 4.5x ratio.</p>
+                            <button class="select-btn">SELECTEER</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2: Frequency -->
+                <div class="shop-step" id="step-2">
+                    <h3 class="step-heading">HOE VAAK WIL JE ONTVANGEN?</h3>
+                    <div class="frequency-grid">
+                        <div class="option-card" data-freq="1">
+                            <span class="option-title">ELKE WEEK</span>
+                            <span class="option-sub">Meest vers</span>
+                        </div>
+                        <div class="option-card" data-freq="2">
+                            <span class="option-title">OM DE WEEK</span>
+                            <span class="option-sub">Perfecte balans</span>
+                        </div>
+                        <div class="option-card" data-freq="4">
+                            <span class="option-title">ELKE MAAND</span>
+                            <span class="option-sub">Lage frequentie</span>
+                        </div>
+                    </div>
+                    <div class="step-nav">
+                        <button class="back-btn">TERUG</button>
+                    </div>
+                </div>
+
+                <!-- Step 3: Quantity & Review -->
+                <div class="shop-step" id="step-3">
+                    <h3 class="step-heading">HOEVEELHEID & CHECKOUT</h3>
+                    <div class="checkout-card">
+                        <div class="quantity-selector">
+                            <label>AANTAL FLESSEN (1L)</label>
+                            <div class="qty-controls">
+                                <button id="qty-minus">-</button>
+                                <span id="qty-value">1</span>
+                                <button id="qty-plus">+</button>
+                            </div>
+                        </div>
+                        
+                        <div class="order-summary">
+                            <div class="summary-line">
+                                <span>ABONNEMENT</span>
+                                <span id="summary-variant">-</span>
+                            </div>
+                            <div class="summary-line">
+                                <span>INTERVAL</span>
+                                <span id="summary-freq">-</span>
+                            </div>
+                            <div class="summary-total">
+                                <span>TOTAAL PER LEVERING</span>
+                                <span id="summary-total">€0,00</span>
+                            </div>
+                            <p class="deposit-notice">* Inclusief €2,00 statiegeld per fles. Geen contract, altijd opzegbaar.</p>
+                        </div>
+                        
+                        <button class="checkout-btn">START SUBSCRIPTION</button>
+                    </div>
+                    <div class="step-nav">
+                        <button class="back-btn">TERUG</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <div id="site-footer"></div>
+    </div>
+
+    <script src="layout.js"></script>
+    <script src="shop.js"></script>
+</body>
+</html>
